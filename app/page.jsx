@@ -1,6 +1,6 @@
 
 export default function Home() {
   return (
-    <div>My-Sketch</div>
+    <div>Main-Page</div>
   )
 }
