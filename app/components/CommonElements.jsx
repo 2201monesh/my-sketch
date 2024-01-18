@@ -1,3 +1,5 @@
+"use client"
+
 import React from 'react'
 import { IoTextOutline } from "react-icons/io5";
 import { FaRegSquare } from "react-icons/fa";
@@ -6,6 +8,8 @@ import { FiTriangle } from "react-icons/fi";
 import { RiPentagonLine } from "react-icons/ri";
 
 function CommonElements() {
+
+
   return (
     <div>
       <h3>Common Elements</h3>

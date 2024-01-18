@@ -3,11 +3,14 @@
 import { useEffect, useRef } from 'react';
 import { fabric } from 'fabric';
 
-const Canvas = () => {
+const CanvasBoard = () => {
   const canvasRef = useRef(null);
+  const fabricCanvasRef = useRef(null); // this line can be deleted
   
   useEffect(() => {
     const canvas = new fabric.Canvas(canvasRef.current);
+
+    fabricCanvasRef.current = canvas; // this line can be deleted
 
     
     const rect = new fabric.Rect({
@@ -45,6 +48,7 @@ const Canvas = () => {
       fill: 'orange',
     });
 
+
     canvas.add(rect);
     canvas.add(circle);
     canvas.add(triangle);
@@ -65,4 +69,4 @@ const Canvas = () => {
   );
 };
 
-export default Canvas;
+export default CanvasBoard;
