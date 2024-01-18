@@ -9,6 +9,7 @@ export default function Home() {
       <Sidebar />
       <ElementsTab />
      </div>
+     
      <div>
       <ToolBox />
      </div>

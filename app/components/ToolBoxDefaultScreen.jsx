@@ -4,24 +4,24 @@ import Scenary from '../tools/Scenary'
 function ToolBoxDefaultScreen() {
   return (
     <div>
-      <div className='size'>
+      <div className='size pb-3'>
         <h3>Size</h3>
         <div className='flex justify-between pt-2'>
           <div className='flex'>
             <h3 className='pr-2 text-gray-500 hover:text-blue-600'>Width</h3>
-            <h3>Option</h3>   {/* edit this to options tab */}
+            <input className='w-14' type="number" id="width" name="width" min="1" value="100"></input>    {/* create state to manage the width */}
           </div>
           <div className='flex'>
             <h3 className='pr-2 text-gray-500 hover:text-blue-600'>Height</h3>
-            <h3>Option</h3>   {/* edit this to options tab */}
+            <input className='w-14' type="number" id="height" name="height" min="1" value="100"></input>     {/* create state to manage the height */}
           </div>
         </div>
       </div>
-      <div className='color pt-2 bg-bl bg-'>
+      <div className='color pt-2 pb-3'>
         <h3>Color</h3>
         <div className='flex pt-2'>
           <h3 className='pr-2 text-gray-500 hover:text-blue-600'>color</h3>
-          <h3>color box</h3>
+          <input type="color" id="colorpicker" value="#0000ff"></input>     {/* create state to manage the color */}
         </div>
       </div>
       <div className='matching pt-2'>
