@@ -6,11 +6,10 @@ import { fabric } from 'fabric';
 const Canvas = () => {
   const canvasRef = useRef(null);
   
-
   useEffect(() => {
     const canvas = new fabric.Canvas(canvasRef.current);
 
-    // Add Fabric.js operations here
+    
     const rect = new fabric.Rect({
      left: 100,
      top: 100,
@@ -18,15 +17,51 @@ const Canvas = () => {
      height: 50,
      fill: 'red',
     });
+
+    const circle = new fabric.Circle({
+     left: 100,
+     top: 100,
+     radius: 25,
+     fill: 'blue',
+    });
+
+    const triangle = new fabric.Triangle({
+     left: 200,
+     top: 100,
+     width: 50,
+     height: 50,
+     fill: 'green',
+    });
+
+    const pentagon = new fabric.Polygon([
+     { x: 250, y: 100 },
+     { x: 300, y: 50 },
+     { x: 350, y: 75 },
+     { x: 350, y: 125 },
+     { x: 300, y: 150 }
+    ], {
+      left: 300,
+      top: 100,
+      fill: 'orange',
+    });
+
     canvas.add(rect);
+    canvas.add(circle);
+    canvas.add(triangle);
+    canvas.add(pentagon);
+
+
   }, []);
 
   return (
-    <canvas
+    
+      <canvas
       ref={canvasRef}
-      width={800}  
-      height={600} 
+      width={400}
+      height={550}
+      className='border'
     />
+
   );
 };
 

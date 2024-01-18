@@ -5,12 +5,12 @@ import ToolBox from "./components/ToolBox";
 
 export default function Home() {
   return (
-    <div className="flex justify-between">
+    <div className="flex justify-between ">
      <div className="flex">
       <Sidebar />
       <ElementsTab />
      </div>
-     <div className="canvas flex justify-center items-center">
+     <div className="canvas flex items-center justify-center">
       <Canvas />
      </div>
      <div>
