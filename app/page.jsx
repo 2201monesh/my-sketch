@@ -1,3 +1,4 @@
+import Canvas from "./components/Canvas";
 import ElementsTab from "./components/ElementsTab";
 import Sidebar from "./components/Sidebar";
 import ToolBox from "./components/ToolBox";
@@ -9,7 +10,9 @@ export default function Home() {
       <Sidebar />
       <ElementsTab />
      </div>
-     
+     <div className="canvas flex justify-center items-center">
+      <Canvas />
+     </div>
      <div>
       <ToolBox />
      </div>
