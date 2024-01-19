@@ -1,12 +1,5 @@
+import React from "react";
 
-import { createContext, useContext } from 'react';
+const ShapeContext = React.createContext()
 
-export const ShapeContext = createContext({
-  // default context goes here
-})
-
-export const ShapeProvider = ShapeContext.Provider
-
-export default function useShape(){
-    return useContext(ShapeContext)
-}
+export default ShapeContext;
