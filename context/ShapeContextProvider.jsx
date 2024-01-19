@@ -1,5 +1,7 @@
+"use client"
+
 import React, { useState } from "react";
-import ShapeContext from "./shapeContext";
+import ShapeContext from "./ShapeContext";
 
 const ShapeContextProvider = ({children}) => {
 
