@@ -1,3 +1,4 @@
+import ShapeContextProvider from '@/context/ShapeContextProvider'
 import Navbar from './components/Navbar'
 import './globals.css'
 import { Rubik } from 'next/font/google'
@@ -14,7 +15,9 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={rubik.className}>
         <Navbar />
+      <ShapeContextProvider>  
         {children}
+      </ShapeContextProvider>  
       </body>
     </html>
   )
