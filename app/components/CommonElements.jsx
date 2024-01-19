@@ -11,10 +11,22 @@ import { RiPentagonLine } from "react-icons/ri";
 
 function CommonElements() {
 
-  const {setRect} = useContext(ShapeContext);
+  const {setRect, setCircle, setTriangle, setPentagon} = useContext(ShapeContext);
 
   const handleRectClick = () => {
     setRect((prev) => prev + 1);
+  }
+
+  const handleCircleClick = () => {
+    setCircle((prev) => prev + 1)
+  }
+
+  const handleTriangleClick = () => {
+    setTriangle((prev) => prev + 1)
+  }
+
+  const handlePentagonClick = () => {
+    setPentagon((prev) => prev + 1)
   }
 
 
@@ -28,13 +40,13 @@ function CommonElements() {
         <div onClick={handleRectClick} className='p-2 bg-gray-100 w-12 mr-1 flex items-center justify-center cursor-pointer hover:text-blue-500'>
             <span><FaRegSquare fontSize={25} /></span>
         </div>
-        <div className='p-2 bg-gray-100 w-12 mr-1 flex items-center justify-center cursor-pointer hover:text-blue-500'>
+        <div onClick={handleCircleClick} className='p-2 bg-gray-100 w-12 mr-1 flex items-center justify-center cursor-pointer hover:text-blue-500'>
             <span><FaRegCircle fontSize={25} /></span>
         </div>
-        <div className='p-2 bg-gray-100 w-12 mr-1 flex items-center justify-center cursor-pointer hover:text-blue-500'>
+        <div onClick={handleTriangleClick} className='p-2 bg-gray-100 w-12 mr-1 flex items-center justify-center cursor-pointer hover:text-blue-500'>
             <span><FiTriangle fontSize={25} /></span>
         </div>
-        <div className='p-2 bg-gray-100 w-12 mr-1 flex items-center justify-center cursor-pointer hover:text-blue-500'>
+        <div onClick={handlePentagonClick} className='p-2 bg-gray-100 w-12 mr-1 flex items-center justify-center cursor-pointer hover:text-blue-500'>
             <span><RiPentagonLine fontSize={25} /></span>
         </div>
       </div>

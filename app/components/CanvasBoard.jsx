@@ -30,7 +30,7 @@ const CanvasBoard = () => {
   },[])  
 
   // context 
-  const {rect} = useContext(ShapeContext);
+  const {rect, circle, triangle, pentagon} = useContext(ShapeContext);
 
   useEffect(() => {
     if(canvas.current && rect > 0){
@@ -44,6 +44,50 @@ const CanvasBoard = () => {
       canvas.current.add(rectangle);  
     }
   }, [rect])  
+
+  useEffect(() => {
+    if(canvas.current && circle > 0){
+        const circle = new fabric.Circle({
+        radius: 25,
+        fill: 'red',
+        selectable: true,
+      });
+      canvas.current.add(circle);    
+    }
+  }, [circle])
+
+  useEffect(() => {
+    if(canvas.current && triangle > 0){
+      const triangle = new fabric.Triangle({
+       left: 200,
+       top: 100,
+       width: 50,
+       height: 50,
+       fill: 'green',
+      });
+      canvas.current.add(triangle);
+    }
+  }, [triangle])
+
+  useEffect(() => {
+    if(canvas.current && pentagon > 0){
+      const pentagon = new fabric.Polygon(
+        [
+          { x: 250, y: 100 },
+          { x: 300, y: 50 },
+          { x: 350, y: 75 },
+          { x: 350, y: 125 },
+          { x: 300, y: 150 },
+        ],
+        {
+          left: 300,
+          top: 100,
+          fill: 'orange',
+        }
+      ); 
+      canvas.current.add(pentagon);     
+    }
+  }, [pentagon])
 
   return ( 
       <canvas
