@@ -1,7 +1,28 @@
-import React from 'react'
+"use client"
+
+import React, { useContext, useState } from 'react'
 import Scenary from '../tools/Scenary'
+import ShapeContext from '@/context/ShapeContext'
 
 function ToolBoxDefaultScreen() {
+
+  const {width, setWidth, height, setHeight} = useContext(ShapeContext);
+
+  const [canvasWidth, setCanvasWidth] = useState(width);
+  const [canvasHeight, setCanvasHeight] = useState(height);
+
+  const handleWidthChange = (e) => {
+    setCanvasWidth(e.target.value)
+    console.log(canvasWidth);
+    setWidth(canvasWidth);
+  }
+
+  const handleHeightChange = (e) => {
+    setCanvasHeight(e.target.value)
+    console.log(canvasHeight);
+    setHeight(canvasHeight)
+  }
+
   return (
     <div>
       <div className='size pb-3'>
@@ -9,11 +30,11 @@ function ToolBoxDefaultScreen() {
         <div className='flex justify-between pt-2'>
           <div className='flex'>
             <h3 className='pr-2 text-gray-500 hover:text-blue-600'>Width</h3>
-            <input className='w-14' type="number" id="width" name="width" min="1" value="100"></input>    {/* create state to manage the width */}
+            <input className='w-14' type="number" id="width" name="width" min="1" max={800} value={canvasWidth} onChange={handleWidthChange}></input>
           </div>
           <div className='flex'>
             <h3 className='pr-2 text-gray-500 hover:text-blue-600'>Height</h3>
-            <input className='w-14' type="number" id="height" name="height" min="1" value="100"></input>     {/* create state to manage the height */}
+            <input className='w-14' type="number" id="height" name="height" min="1" max={600} value={canvasHeight} onChange={handleHeightChange}></input>     
           </div>
         </div>
       </div>

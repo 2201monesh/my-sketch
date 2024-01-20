@@ -10,28 +10,32 @@ const CanvasBoard = () => {
   const canvasRef = useRef(null);
   const canvas = useRef(null);  
 
-
-  useEffect(() => {
-    canvas.current = new fabric.Canvas(canvasRef.current, {
-      width: 400,
-      height: 550
-    })
-
-    // canvas.current.on('mouse:down', (options) => {        // This function is optional can be discarded in future
-    //   if (options.target === null) {
-    //     canvas.current.discardActiveObject().renderAll();
-    //   }
-    // });    
-
-    return () => {
-      if (canvas.current) {
-        canvas.current.dispose();
-      }
-    };
-  },[])  
-
   // context 
-  const {rect, circle, triangle, pentagon, drawPen, eraser} = useContext(ShapeContext);
+  const {rect, circle, triangle, pentagon, drawPen, eraser, width, height} = useContext(ShapeContext);  
+
+
+  useEffect(() => { 
+
+    if (canvas.current) {
+      // If the canvas already exists, update its dimensions
+      canvas.current.setDimensions({ width: width, height: height });
+      canvas.current.renderAll();
+    } else{
+        canvas.current = new fabric.Canvas(canvasRef.current, {
+          width: width,
+          height: height
+        })
+    }     
+    
+    // This method is commented because there is no need of disposing canvas after the change in its width and height
+    // return () => {
+    //   if (canvas.current) {
+    //     canvas.current.dispose();
+    //   }
+    // };
+
+  },[width, height])  
+
 
   useEffect(() => {
     if(canvas.current && rect > 0){
