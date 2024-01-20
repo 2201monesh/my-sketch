@@ -14,8 +14,8 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={rubik.className}>
-        <Navbar />
-      <ShapeContextProvider>  
+      <ShapeContextProvider> 
+        <Navbar /> 
         {children}
       </ShapeContextProvider>  
       </body>

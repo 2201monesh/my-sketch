@@ -22,8 +22,11 @@ const ShapeContextProvider = ({children}) => {
     // canvas background color state
     const [canvasColor, setCanvasColor] = useState('#ffffff');
 
+    // image upload
+    const [image, setImage] = useState(null);
+
     return (
-        <ShapeContext.Provider value={{rect, setRect, circle, setCircle, triangle, setTriangle, pentagon, setPentagon, drawPen, setDrawPen, eraser, setEraser, width, setWidth, height, setHeight, canvasColor, setCanvasColor}}>
+        <ShapeContext.Provider value={{rect, setRect, circle, setCircle, triangle, setTriangle, pentagon, setPentagon, drawPen, setDrawPen, eraser, setEraser, width, setWidth, height, setHeight, canvasColor, setCanvasColor, image, setImage}}>
             {children}
         </ShapeContext.Provider>
     )

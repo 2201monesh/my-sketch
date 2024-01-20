@@ -11,7 +11,7 @@ const CanvasBoard = () => {
   const canvas = useRef(null);  
 
   // context 
-  const {rect, circle, triangle, pentagon, drawPen, eraser, width, height, canvasColor} = useContext(ShapeContext);  
+  const {rect, circle, triangle, pentagon, drawPen, eraser, width, height, canvasColor, image} = useContext(ShapeContext);  
 
 
   useEffect(() => { 
@@ -113,6 +113,18 @@ const CanvasBoard = () => {
       canvas.current.freeDrawingBrush.width = 20;
     }
   }, [eraser])
+
+  useEffect(() => {
+    if(canvas.current && image){
+      fabric.Image.fromURL(URL.createObjectURL(image), (img) => {
+        img.set({
+          left: 0,
+          top: 0,
+        })
+        canvas.current.add(img);
+      })
+    }   
+  }, [image])
 
   return ( 
       <canvas
