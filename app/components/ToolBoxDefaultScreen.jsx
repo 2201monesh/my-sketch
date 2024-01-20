@@ -34,11 +34,11 @@ function ToolBoxDefaultScreen() {
         <div className='flex justify-between pt-2'>
           <div className='flex'>
             <h3 className='pr-2 text-gray-500 hover:text-blue-600'>Width</h3>
-            <input className='w-14 pl-1 border-2 rounded hover:border-gray-500 hover:cursor-pointer' type="number" id="width" name="width" min="1" max={800} value={canvasWidth} onChange={handleWidthChange}></input>
+            <input className='w-14 pl-1 border-2 border-gray-300 rounded hover:border-gray-500 cursor-pointer' type="number" id="width" name="width" min="1" max={800} value={canvasWidth} onChange={handleWidthChange}></input>
           </div>
           <div className='flex'>
             <h3 className='pr-2 text-gray-500 hover:text-blue-600'>Height</h3>
-            <input className='w-14 pl-1 border-2 rounded hover:border-gray-500 hover:cursor-pointer' type="number" id="height" name="height" min="1" max={600} value={canvasHeight} onChange={handleHeightChange}></input>     
+            <input className='w-14 pl-1 border-2 border-gray-300 rounded hover:border-gray-500 cursor-pointer' type="number" id="height" name="height" min="1" max={600} value={canvasHeight} onChange={handleHeightChange}></input>     
           </div>
         </div>
       </div>
@@ -46,7 +46,7 @@ function ToolBoxDefaultScreen() {
         <h3>Color</h3>
         <div className='flex pt-2'>
           <h3 className='pr-2 text-gray-500 hover:text-blue-600'>Background color</h3>
-          <input className='hover:cursor-pointer' type="color" id="colorpicker" value={canvasColor} onChange={handleColorChange}></input>
+          <input className='cursor-pointer' type="color" id="colorpicker" value={canvasColor} onChange={handleColorChange}></input>
         </div>
       </div>
       {/* <div className='matching pt-2'>

@@ -11,7 +11,7 @@ const CanvasBoard = () => {
   const canvas = useRef(null);  
 
   // context 
-  const {rect, circle, triangle, pentagon, drawPen, eraser, width, height, canvasColor, image} = useContext(ShapeContext);  
+  const {rect, circle, triangle, pentagon, drawPen, eraser, width, height, canvasColor, image, text} = useContext(ShapeContext);  
 
 
   useEffect(() => { 
@@ -94,10 +94,21 @@ const CanvasBoard = () => {
       ); 
       canvas.current.add(pentagon);     
     }
-  }, [pentagon])
+  }, [pentagon]) 
 
   useEffect(() => {
-    console.log("pen state is " + drawPen);
+    if(canvas.current && text){
+      const textObject = new fabric.Textbox(text, {
+        left: 50,
+        top: 50,
+        width: 200,
+        fontSize: 20,
+      });
+      canvas.current.add(textObject);      
+    }
+  }, [text])  
+
+  useEffect(() => {
     if (canvas.current ) {
       drawPen ? canvas.current.isDrawingMode = true : canvas.current.isDrawingMode = false;
       canvas.current.freeDrawingBrush.color = 'blue';
@@ -106,7 +117,6 @@ const CanvasBoard = () => {
   }, [drawPen])
 
   useEffect(() => {
-    console.log("eraser state is " + eraser);
     if (canvas.current) {
       eraser ? canvas.current.isDrawingMode = true : canvas.current.isDrawingMode = false;
       canvas.current.freeDrawingBrush.color = 'white';
@@ -125,6 +135,7 @@ const CanvasBoard = () => {
       })
     }   
   }, [image])
+
 
   return ( 
       <canvas

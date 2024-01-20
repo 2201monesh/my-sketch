@@ -25,8 +25,11 @@ const ShapeContextProvider = ({children}) => {
     // image upload
     const [image, setImage] = useState(null);
 
+    // textbox render
+    const [text, setText] = useState(''); 
+
     return (
-        <ShapeContext.Provider value={{rect, setRect, circle, setCircle, triangle, setTriangle, pentagon, setPentagon, drawPen, setDrawPen, eraser, setEraser, width, setWidth, height, setHeight, canvasColor, setCanvasColor, image, setImage}}>
+        <ShapeContext.Provider value={{rect, setRect, circle, setCircle, triangle, setTriangle, pentagon, setPentagon, drawPen, setDrawPen, eraser, setEraser, width, setWidth, height, setHeight, canvasColor, setCanvasColor, image, setImage, text, setText}}>
             {children}
         </ShapeContext.Provider>
     )
