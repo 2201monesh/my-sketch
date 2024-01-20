@@ -10,8 +10,10 @@ const ShapeContextProvider = ({children}) => {
     const [triangle, setTriangle] = useState(0);
     const [pentagon, setPentagon] = useState(0);
 
+    const [drawPen, setDrawPen] = useState(false);
+
     return (
-        <ShapeContext.Provider value={{rect, setRect, circle, setCircle, triangle, setTriangle, pentagon, setPentagon}}>
+        <ShapeContext.Provider value={{rect, setRect, circle, setCircle, triangle, setTriangle, pentagon, setPentagon, drawPen, setDrawPen}}>
             {children}
         </ShapeContext.Provider>
     )

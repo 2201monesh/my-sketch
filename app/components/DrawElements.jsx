@@ -1,13 +1,24 @@
+"use client"
+
 import React from 'react'
+import { useContext } from 'react';
+import ShapeContext from '@/context/ShapeContext';
 import { GoPencil } from "react-icons/go";
 import { BsEraser } from "react-icons/bs";
 
 function DrawElements() {
+
+  const {drawPen, setDrawPen} = useContext(ShapeContext);
+
+  const handleDrawPen = () => {
+    setDrawPen((prev) => !prev);
+  }
+
   return (
      <div className='pt-4'>
       <h3>Draw Elements</h3>
       <div className='flex pt-2'>
-        <div className='p-2 bg-gray-100 w-12 mr-1 flex items-center justify-center cursor-pointer hover:text-blue-500'>
+        <div onClick={handleDrawPen} className={`p-2 bg-gray-100 w-12 mr-1 flex items-center justify-center cursor-pointer hover:text-blue-500 ${drawPen && 'text-blue-500'}`}>
             <span><GoPencil fontSize={25} /></span>
         </div>
         <div className='p-2 bg-gray-100 w-12 mr-1 flex items-center justify-center cursor-pointer hover:text-blue-500'>

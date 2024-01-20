@@ -10,6 +10,7 @@ const CanvasBoard = () => {
   const canvasRef = useRef(null);
   const canvas = useRef(null);  
 
+
   useEffect(() => {
     canvas.current = new fabric.Canvas(canvasRef.current, {
       width: 400,
@@ -30,7 +31,7 @@ const CanvasBoard = () => {
   },[])  
 
   // context 
-  const {rect, circle, triangle, pentagon} = useContext(ShapeContext);
+  const {rect, circle, triangle, pentagon, drawPen} = useContext(ShapeContext);
 
   useEffect(() => {
     if(canvas.current && rect > 0){
@@ -89,10 +90,18 @@ const CanvasBoard = () => {
     }
   }, [pentagon])
 
+  useEffect(() => {
+    if (canvas.current && drawPen === true ? canvas.current.isDrawingMode = true : canvas.current.isDrawingMode = false ) {
+      // canvas.current.isDrawingMode = !canvas.current.isDrawingMode;
+      canvas.current.freeDrawingBrush.color = 'blue';
+      canvas.current.freeDrawingBrush.width = 20;
+    }    
+  }, [drawPen])
+
   return ( 
       <canvas
       ref={canvasRef}
-      className='border'
+      className='border-4'
     />
   );
 };
