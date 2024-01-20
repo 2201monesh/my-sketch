@@ -31,7 +31,7 @@ const CanvasBoard = () => {
   },[])  
 
   // context 
-  const {rect, circle, triangle, pentagon, drawPen} = useContext(ShapeContext);
+  const {rect, circle, triangle, pentagon, drawPen, eraser} = useContext(ShapeContext);
 
   useEffect(() => {
     if(canvas.current && rect > 0){
@@ -91,12 +91,22 @@ const CanvasBoard = () => {
   }, [pentagon])
 
   useEffect(() => {
-    if (canvas.current && drawPen === true ? canvas.current.isDrawingMode = true : canvas.current.isDrawingMode = false ) {
-      // canvas.current.isDrawingMode = !canvas.current.isDrawingMode;
+    console.log("pen state is " + drawPen);
+    if (canvas.current ) {
+      drawPen ? canvas.current.isDrawingMode = true : canvas.current.isDrawingMode = false;
       canvas.current.freeDrawingBrush.color = 'blue';
       canvas.current.freeDrawingBrush.width = 20;
     }    
   }, [drawPen])
+
+  useEffect(() => {
+    console.log("eraser state is " + eraser);
+    if (canvas.current) {
+      eraser ? canvas.current.isDrawingMode = true : canvas.current.isDrawingMode = false;
+      canvas.current.freeDrawingBrush.color = 'white';
+      canvas.current.freeDrawingBrush.width = 20;
+    }
+  }, [eraser])
 
   return ( 
       <canvas
