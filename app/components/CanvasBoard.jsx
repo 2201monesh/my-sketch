@@ -11,7 +11,7 @@ const CanvasBoard = () => {
   const canvas = useRef(null);  
 
   // context 
-  const {rect, circle, triangle, pentagon, drawPen, eraser, width, height} = useContext(ShapeContext);  
+  const {rect, circle, triangle, pentagon, drawPen, eraser, width, height, canvasColor} = useContext(ShapeContext);  
 
 
   useEffect(() => { 
@@ -19,11 +19,13 @@ const CanvasBoard = () => {
     if (canvas.current) {
       // If the canvas already exists, update its dimensions
       canvas.current.setDimensions({ width: width, height: height });
+      canvas.current.setBackgroundColor(canvasColor);
       canvas.current.renderAll();
     } else{
         canvas.current = new fabric.Canvas(canvasRef.current, {
           width: width,
-          height: height
+          height: height,
+          backgroundColor: canvasColor
         })
     }     
     
@@ -34,7 +36,7 @@ const CanvasBoard = () => {
     //   }
     // };
 
-  },[width, height])  
+  },[width, height, canvasColor])  
 
 
   useEffect(() => {

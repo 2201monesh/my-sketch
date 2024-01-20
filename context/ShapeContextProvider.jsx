@@ -19,8 +19,11 @@ const ShapeContextProvider = ({children}) => {
     const [width, setWidth] = useState(400);
     const [height, setHeight] = useState(550);
 
+    // canvas background color state
+    const [canvasColor, setCanvasColor] = useState('#ffffff');
+
     return (
-        <ShapeContext.Provider value={{rect, setRect, circle, setCircle, triangle, setTriangle, pentagon, setPentagon, drawPen, setDrawPen, eraser, setEraser, width, setWidth, height, setHeight}}>
+        <ShapeContext.Provider value={{rect, setRect, circle, setCircle, triangle, setTriangle, pentagon, setPentagon, drawPen, setDrawPen, eraser, setEraser, width, setWidth, height, setHeight, canvasColor, setCanvasColor}}>
             {children}
         </ShapeContext.Provider>
     )
