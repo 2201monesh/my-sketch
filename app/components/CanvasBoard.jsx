@@ -3,7 +3,8 @@
 import { useEffect, useRef } from 'react';
 import { fabric } from 'fabric';
 import { useContext } from 'react';
-import ShapeContext from '@/context/ShapeContext';
+// import ShapeContext from '@/context/ShapeContext';
+import ShapeContext from '../../context/ShapeContext.js'
 
 const CanvasBoard = () => {
 
