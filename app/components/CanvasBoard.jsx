@@ -36,7 +36,7 @@ const CanvasBoard = () => {
     //   }
     // };
 
-  },[width, height, canvasColor])  
+  },[width, height, canvasColor])
 
 
   useEffect(() => {

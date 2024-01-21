@@ -20,10 +20,10 @@ function Navbar() {
         <input type="file" accept="image/*" id="fileInput" style={{display: 'none'}} onChange={handleImageUpload} />
         <label htmlFor="fileInput" className="cursor-pointer hover:text-gray-500">Insert images/files</label>
       </div>
-      <div className="flex justify-center items-center">
+      {/* <div className="flex justify-center items-center">
         <h3 className="mr-7 cursor-pointer hover:text-gray-500">Preview</h3>
         <SaveBtn />
-      </div>
+      </div> */}
     </nav>
   )
 }
