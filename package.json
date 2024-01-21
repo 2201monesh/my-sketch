@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "vercel_build": "npm install zlib1g && npm run build"
   },
   "dependencies": {
     "fabric": "^5.3.0",
