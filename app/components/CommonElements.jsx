@@ -3,7 +3,7 @@
 import React from 'react'
 import { useContext } from 'react';
 // import ShapeContext from '@/context/ShapeContext';
-import ShapeContext from '../../context/ShapeContext.js'
+import ShapeContext from '../../context/ShapeContext'
 import { IoTextOutline } from "react-icons/io5";
 import { FaRegSquare } from "react-icons/fa";
 import { FaRegCircle } from "react-icons/fa";

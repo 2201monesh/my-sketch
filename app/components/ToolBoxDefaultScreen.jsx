@@ -3,7 +3,7 @@
 import React, { useContext, useState } from 'react'
 import Scenary from '../tools/Scenary'
 // import ShapeContext from '@/context/ShapeContext'
-import ShapeContext from '../../context/ShapeContext.js'
+import ShapeContext from '../../context/ShapeContext'
 
 function ToolBoxDefaultScreen() {
 

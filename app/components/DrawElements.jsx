@@ -3,7 +3,7 @@
 import React from 'react'
 import { useContext } from 'react';
 // import ShapeContext from '@/context/ShapeContext';
-import ShapeContext from '../../context/ShapeContext.js'
+import ShapeContext from '../../context/ShapeContext'
 import { GoPencil } from "react-icons/go";
 import { BsEraser } from "react-icons/bs";
 

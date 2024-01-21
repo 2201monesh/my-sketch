@@ -2,7 +2,7 @@
 import SaveBtn from "./SaveBtn";
 import { useContext } from "react";
 // import ShapeContext from "@/context/ShapeContext";
-import ShapeContext from '../../context/ShapeContext.js'
+import ShapeContext from '../../context/ShapeContext'
 
 function Navbar() {
 

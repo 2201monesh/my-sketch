@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react'
 import { useContext } from 'react';
-import ShapeContext from '../../context/ShapeContext.js'
+import ShapeContext from '../../context/ShapeContext'
 
 function InputElements() {
 
